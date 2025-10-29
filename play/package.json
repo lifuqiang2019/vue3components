@@ -1,0 +1,19 @@
+{
+  "name": "play",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@vue3-components/components": "workspace:*",
+    "@vue3-components/utils": "workspace:*",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}
+

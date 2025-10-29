@@ -1,0 +1,19 @@
+{
+  "name": "@vue3-components/utils",
+  "version": "1.0.0",
+  "description": "Utility functions for vue3-components",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "clean": "rm -rf dist"
+  },
+  "keywords": ["utils", "vue3"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.0"
+  }
+}
+
