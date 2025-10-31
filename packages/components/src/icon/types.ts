@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { PropType } from 'vue'
 
 export const iconProps = {
   /**
@@ -22,7 +22,20 @@ export const iconProps = {
     type: Boolean,
     default: false
   }
-} as const
+}
 
-export type IconProps = ExtractPropTypes<typeof iconProps>
+export interface IconProps {
+  /**
+   * 图标大小
+   */
+  size?: number | string
+  /**
+   * 图标颜色
+   */
+  color?: string
+  /**
+   * 是否旋转动画
+   */
+  spin?: boolean
+}
 
