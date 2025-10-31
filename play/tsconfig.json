@@ -4,7 +4,9 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@vue3-components/components": ["../packages/components/src/index.ts"],
+      "@vue3-components/utils": ["../packages/utils/src/index.ts"]
     }
   },
   "include": ["src/**/*"],
