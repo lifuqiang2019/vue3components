@@ -1,0 +1,71 @@
+// Colors
+$--color-white: #ffffff;
+$--color-black: #000000;
+$--color-primary: #409eff;
+$--color-success: #67c23a;
+$--color-warning: #e6a23c;
+$--color-danger: #f56c6c;
+$--color-info: #909399;
+
+// Typography
+$--font-size-base: 14px;
+$--font-size-small: 13px;
+$--font-size-large: 18px;
+
+// Border
+$--border-width-base: 1px;
+$--border-style-base: solid;
+$--border-color-base: #dcdfe6;
+$--border-color-light: #e4e7ed;
+$--border-color-lighter: #ebeef5;
+$--border-color-extra-light: #f2f6fc;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base;
+$--border-radius-base: 4px;
+$--border-radius-small: 2px;
+
+// Button
+$--button-font-size: $--font-size-base;
+$--button-border-radius: $--border-radius-base;
+$--button-padding-vertical: 12px;
+$--button-padding-horizontal: 20px;
+$--button-font-weight: 500;
+$--button-hover-tint-percent: 20%;
+$--button-active-shade-percent: 10%;
+$--button-disabled-tint-percent: 50%;
+
+// Checkbox
+$--checkbox-font-size: 14px;
+$--checkbox-font-weight: 500;
+$--checkbox-font-color: #606266;
+$--checkbox-input-height: 14px;
+$--checkbox-input-width: 14px;
+$--checkbox-border-radius: 2px;
+$--checkbox-background-color: $--color-white;
+$--checkbox-input-border: $--border-base;
+$--checkbox-checked-background-color: $--color-primary;
+$--checkbox-checked-input-border-color: $--color-primary;
+$--checkbox-checked-icon-color: $--color-white;
+$--checkbox-disabled-background-color: #f5f7fa;
+$--checkbox-disabled-input-border-color: #dcdfe6;
+$--checkbox-disabled-icon-color: #c0c4cc;
+
+// Input
+$--input-height: 40px;
+$--input-font-size: $--font-size-base;
+$--input-border: $--border-base;
+$--input-border-color: $--border-color-base;
+$--input-border-radius: $--border-radius-base;
+$--input-background-color: $--color-white;
+$--input-icon-color: #c0c4cc;
+$--input-placeholder-color: #c0c4cc;
+$--input-hover-border: $--border-color-base;
+$--input-focus-border: $--color-primary;
+$--input-disabled-fill: #f5f7fa;
+$--input-disabled-border: #e4e7ed;
+$--input-disabled-color: #c0c4cc;
+
+// Z-index
+$--index-normal: 1;
+$--index-top: 1000;
+$--index-popper: 2000;
+

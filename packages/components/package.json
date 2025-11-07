@@ -16,7 +16,8 @@
     "vue": "^3.3.0"
   },
   "dependencies": {
-    "@vue3-components/utils": "workspace:*"
+    "@vue3-components/utils": "workspace:*",
+    "async-validator": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",

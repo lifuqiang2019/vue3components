@@ -1,0 +1,130 @@
+// Icon font styles
+// 基础图标样式
+[class^="vc-icon-"],
+[class*=" vc-icon-"] {
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+}
+
+// Loading 图标 - 旋转动画
+.vc-icon-loading {
+  animation: vc-icon-rotate 1s linear infinite;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+@keyframes vc-icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Circle Close 图标 - 关闭按钮 (使用 × 符号)
+.vc-icon-circle-close {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 0.8em;
+    background-color: currentColor;
+    transform-origin: center;
+  }
+  
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
+
+// View 图标 - 查看/显示 (使用眼睛图标)
+.vc-icon-view {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.6em;
+    height: 0.6em;
+    border: 1.5px solid currentColor;
+    border-radius: 50% 50% 50% 0;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0.3em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.2em;
+    height: 0.2em;
+    background-color: currentColor;
+    border-radius: 50%;
+  }
+}
+
+// Hide 图标 - 隐藏 (使用带斜线的眼睛图标)
+.vc-icon-hide {
+  position: relative;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0.6em;
+    height: 0.6em;
+    border: 1.5px solid currentColor;
+    border-radius: 50% 50% 50% 0;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1em;
+    height: 1px;
+    background-color: currentColor;
+    transform: translateY(0.5em) rotate(45deg);
+    transform-origin: left center;
+  }
+}
+

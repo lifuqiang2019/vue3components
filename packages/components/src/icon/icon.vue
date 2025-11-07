@@ -7,17 +7,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { createNamespace } from '@vue3-components/utils'
-import type { IconProps } from './types'
+import { iconProps } from './types'
 
 defineOptions({
   name: 'VcIcon'
 })
 
-const props = withDefaults(defineProps<IconProps>(), {
-  size: undefined,
-  color: undefined,
-  spin: false
-})
+const props = defineProps(iconProps)
 
 const emit = defineEmits<{
   click: [event: MouseEvent]
