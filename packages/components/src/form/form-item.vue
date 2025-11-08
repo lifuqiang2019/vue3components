@@ -4,7 +4,7 @@
       {{ label }}
       <span v-if="isRequired" class="vc-form-item__required-mark">*</span>
     </label>
-    <div :class="bem.e('content')">
+    <div :class="bem.e('content')" @blur.capture="onFieldBlur" @change.capture="onFieldChange">
       <slot></slot>
       <transition name="vc-zoom-in-top">
         <div v-if="validateState === 'error' && showMessage" :class="bem.e('error')">
@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, inject, onMounted, onBeforeUnmount, provide, ref, watch } from 'vue'
+import { computed, inject, onMounted, onBeforeUnmount, provide, ref } from 'vue'
 import { createNamespace } from '@vue3-components/utils'
 import { formItemProps, type FormContext } from './types'
 import Schema from 'async-validator'
@@ -56,13 +56,32 @@ const classes = computed(() => {
   ]
 })
 
+const showMessage = computed(() => {
+  return props.showMessage && form.showMessage !== false
+})
+
+// 获取当前字段的所有规则（优先使用 props.rules，否则从 form.rules 中获取）
+const getRules = () => {
+  let formRules = props.rules
+  
+  // 如果 props.rules 为空，从 form.rules 中根据 prop 获取
+  if ((!formRules || (Array.isArray(formRules) && formRules.length === 0)) && props.prop && form.rules) {
+    formRules = form.rules[props.prop]
+  }
+  
+  // 确保返回数组
+  if (!formRules) return []
+  return Array.isArray(formRules) ? formRules : [formRules]
+}
+
 const isRequired = computed(() => {
-  if (!props.rules || props.rules.length === 0) return false
-  return props.rules.some((rule: any) => rule.required)
+  const rules = getRules()
+  if (rules.length === 0) return false
+  return rules.some((rule: any) => rule.required)
 })
 
 const getFilteredRules = (trigger?: string) => {
-  const rules = props.rules || []
+  const rules = getRules()
   return rules.filter((rule: any) => {
     if (!rule.trigger || !trigger) return true
     if (Array.isArray(rule.trigger)) {
